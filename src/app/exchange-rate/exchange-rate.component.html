@@ -1,0 +1,45 @@
+<div class="component-container">
+    <h3>Currency Converter</h3>
+    <form [formGroup]="convertForm" (ngSubmit)="onSubmit()">
+
+        <label>Type in Amount and select Currency</label>
+        <div class="col-1">
+            <input type="number" formControlName="inputValue" required="" placeholder="Enter Value" min="1">
+        </div>
+        <div class="col-2">
+            <select formControlName="inputCur">
+        <optgroup label="SELECT CURRENCY">
+
+          <option value="" selected>--FROM CURRENCY--</option>
+          <option value="USD" selected>USD</option>
+          <option value="CAD">CAD</option>
+        </optgroup>
+      </select>
+        </div>
+
+        <div class="col-1">
+            <input readonly type="number" [value]="outputValue">
+
+        </div>
+        <div class="col-2">
+            <select formControlName="outputCur">
+        <optgroup label="SELECT CURRENCY">
+            <option value="" selected>--TO CURRENCY--</option>
+          <option value="USD">USD</option>
+          <option value="CAD" selected>CAD</option>
+        </optgroup>
+      </select>
+        </div>
+        <div>
+            <button>CONVERT</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- <p class="m-0 font-weight-bold" *ngIf="output">
+    ${{inputValue | number}} {{inputCur}} equals ${{outputValue | number}}
+    {{outputCur}}.</p>-->
