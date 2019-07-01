@@ -12,12 +12,7 @@ export class ExchangeService {
   
   // RESTful API  and HTTP headers
   EXCHANGE_API = 'http://data.fixer.io/api/latest?access_key=0e82e246500e79435b1d3aa892835d1b&symbols=CAD,USD,EUR&format=1';
-/*
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json'
-    })
-  };*/
+
   private extractData(res: Response) {
     let body = res;
     return body || {};
