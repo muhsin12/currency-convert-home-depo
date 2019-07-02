@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { ExchangeService } from "../service/exchange.service";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
 
 
 @Component({
@@ -16,6 +18,7 @@ export class ExchangeRateComponent implements OnInit {
   outputValue;
   inputCur = '';
   outputCur = '';
+  @Input() text = '';
   constructor(public rest: ExchangeService, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
